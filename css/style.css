@@ -1,0 +1,260 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+}
+nav .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+nav .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #10b981;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle .hamburger {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+}
+.nav-toggle .hamburger::after,
+.nav-toggle .hamburger::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+}
+.nav-toggle .hamburger::before {
+  top: -8px;
+}
+.nav-toggle .hamburger::after {
+  bottom: -8px;
+}
+
+/* Hero Section */
+#home {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hero.jpg") center / cover
+    no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+#home .hero-text {
+  max-width: 800px;
+  padding: 0 1rem;
+}
+#home h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+#home p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+#home .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #10b981;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+#home .btn:hover {
+  background: #059669;
+}
+
+/* Work Section */
+#work {
+  background: #f9f9f9;
+  padding: 6rem 1rem;
+}
+#work .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#work h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.project {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.project img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s;
+}
+.project:hover img {
+  transform: scale(1.1);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.project:hover .overlay {
+  opacity: 1;
+}
+.overlay span {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* About Section */
+#about {
+  background: #fff;
+  padding: 6rem 1rem;
+}
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.photo {
+  flex: 1 1 250px;
+}
+.photo img {
+  width: 100%;
+  border-radius: 50%;
+}
+.text {
+  flex: 2 1 400px;
+}
+.text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.text p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.text ul {
+  list-style: none;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.text ul li {
+  margin-bottom: 0.5rem;
+}
+.text ul li::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: #10b981;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 2.2rem;
+  }
+  #home p {
+    font-size: 1rem;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .photo {
+    margin-bottom: 2rem;
+  }
+  .text ul {
+    text-align: left;
+  }
+}
