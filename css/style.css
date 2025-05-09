@@ -80,7 +80,7 @@ nav ul li a:hover {
 #home {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-              url("../images/berlin_skyline.jpg") center / cover no-repeat;
+              url("../images/berlin.jpg") center / cover no-repeat;
   filter: brightness(0.9);
   display: flex;
   justify-content: center;
