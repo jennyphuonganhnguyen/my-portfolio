@@ -168,6 +168,9 @@ nav ul li a:hover {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;
+  text-align: center;
+  padding: 0 1rem;
+  display: block;
 }
 
 /* About Section */
